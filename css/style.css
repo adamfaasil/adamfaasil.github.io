@@ -306,7 +306,7 @@ body.dark-mode h1, body.dark-mode p {
 /* Add a wrapper for the scrolling items */
 .skills-scroll-wrapper {
   display: flex; /* Ensure items are in a row */
-  animation: scroll 40s linear infinite; /* Scrolling animation */
+  animation: scroll 20s linear infinite; /* Scrolling animation */
 }
 
 .scroll-item {
@@ -330,7 +330,7 @@ body.dark-mode h1, body.dark-mode p {
   height: 0.7rem; /* Set height of progress bar */
   border-radius: 0.5rem;
   background-color: #f39c12; /* Custom color for JavaScript */
-  transition: width 0.8s; /* Smooth transition */
+  transition: width 0.5s; /* Smooth transition */
 }
 
 /* Scroll animation */
@@ -380,9 +380,9 @@ body.dark-mode h1, body.dark-mode p {
 .skill-grid {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 20px;
-  gap: 20px;
-  padding: 20px 0;
+  margin-top: 1.25rem;
+  gap: 1.25rem;
+  padding: 1.25rem 0;
 }
 
 .skill-container h1{
@@ -471,6 +471,7 @@ body.dark-mode .skill-box {
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
   width: 100%;
+  margin-bottom: 1.5%;
 }
 
 /*-------------------------------------------------------------------------------------------------------*/
@@ -531,24 +532,6 @@ footer {
 /* Smaller Screen Adjustments */
 /*-------------------------------------------------------------------------------------------------------*/
 
-.collapsible {
-  margin-bottom: 10px; /* Space between sections */
-}
-
-.collapsible-header {
-  background-color: #f0f0f0; /* Background color */
-  padding: 10px; /* Padding */
-  cursor: pointer; /* Pointer on hover */
-  border: 1px solid #ccc; /* Border */
-}
-
-.collapsible-content {
-  display: none; /* Initially hidden */
-  padding: 10px; /* Padding for content */
-  border: 1px solid #ccc; /* Border for content */
-  background-color: #fafafa; /* Content background */
-}
-
 /* Adjustments for different screens */
 
 @media (max-width: 1150px) {
@@ -563,17 +546,13 @@ footer {
   padding: 1.5%;
   font-size: 0.5rem;
 }
-  .collapsible-content {
-    display: block; /* Show content on larger screens */
-  }
   #logo {
-      width: 12rem; /* Smaller logo for large tablets or small laptops */
+      width: 15rem; /* Smaller logo for large tablets or small laptops */
   }
 }
 
 @media (max-width: 768px) {
   #home {
-    padding: 0;
     flex-wrap: wrap;
     align-items: center;
   }
@@ -595,13 +574,56 @@ footer {
       display: none; /* Hide the navbar */
   }
   #logo {
-      width: 8rem; /* Even smaller logo for tablets */
-      padding: 1.5%;
+    width: 16rem; /* Smallest logo for mobile devices */
+    padding: 1.5%;
+    margin-bottom: 5.5%;
+    margin-top: 3.5%;
   }
 }
 
 @media (max-width: 480px) {
+  #home {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+.home-content {
+  align-items: center;
+  text-align: center;
+  padding: 1.5%;
+  margin-top: -50%;
+}
+.home-content h1 {
+  font-size: 1.3rem;
+}
+.home-content p {
+  font-size: 1.3rem;
+}
+  #skill {
+    width: 100%;
+  }
+.skill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column; /* Stack items vertically */
+}
+
+  .skill-box{
+    display: flex;
+    border-radius: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1.25rem;
+  }
+
+  .skill-box-content {
+    font-size: 1rem;
+  }
+
   #logo {
-      width: 6rem; /* Smallest logo for mobile devices */
+      width: 12rem; /* Smallest logo for mobile devices */
+      padding: 1.5%;
+  }
+  #skills h2{
+    font-size: 1rem;
   }
 }

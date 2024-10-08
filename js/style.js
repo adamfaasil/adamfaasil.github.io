@@ -81,17 +81,6 @@ window.addEventListener('scroll', function() {
     lastScrollTop = scrollTop;
 });
 
-// Collapsable Menu
-document.querySelectorAll('.collapsible-header').forEach(header => {
-    header.addEventListener('click', () => {
-        const content = header.nextElementSibling;
-        const isVisible = content.style.display === 'block';
-
-        // Toggle display
-        content.style.display = isVisible ? 'none' : 'block';
-    });
-});
-
 
 
 
