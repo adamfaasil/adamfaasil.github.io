@@ -1,10 +1,607 @@
-html {
-    font-family: Courier;
-    font-size: 22px;
-    text-align: center;
+/*-------------------------------------------------------------------------------------------------------*/
+/*CSS FILE*/
+/*-------------------------------------------------------------------------------------------------------*/
+
+html{
+  font-family: "Montserrat", sans-serif; /* Font Style */
+  font-optical-sizing: auto;
+  font-size: 16px; /* Base font size */
+   
 }
 
 body {
-    background-color: black;
-    color:rgb(198, 199, 196);
+  margin: 0; /* Body margin */
+  padding: 0; /* Padding margin */
+  width: 100%; /* Set body to full width */
+  height: 100%; /* Set body to full height */
+  overflow-x: hidden;
+}
+
+/* Dark Mode Animation */
+
+body {
+  transition: background-color 0.5s ease, color 0.5s ease; /* Smooth background and text color transition */
+}
+
+* {
+  box-sizing: border-box; /* Apply box-sizing to all elements */
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
+/* Splash Screen Styles */
+/*-------------------------------------------------------------------------------------------------------*/
+
+#splash-screen {
+  position: fixed; /* Cover the whole screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 1); /* Light background with some transparency */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensure it is on top of other content */
+  opacity: 1;
+  transition: opacity 0.5s ease; /* Fade out effect */
+}
+
+.loading-animation {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.5rem solid #ccc; /* Light border */
+  border-top: 0.5rem solid #3466db; /* Color of the loading animation */
+  border-radius: 50%;
+  animation: spin 2s linear infinite; /* Spin animation */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#splash-screen h1 {
+  font-size: 4rem; /* Adjust as needed */
+}
+
+.dark-mode #splash-screen {
+  background: #333; /* Dark background */
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
+/*Header*/
+/*-------------------------------------------------------------------------------------------------------*/
+
+.hero{
+  display: flexbox;
+  width: 100%;
+}
+
+.hidden {
+  display: none; /* Hide the element */
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
+/* Navigation Bar & Dark Mode Toggle*/
+/*-------------------------------------------------------------------------------------------------------*/
+
+.navbar {
+  display: flex; /* Use flex layout */
+  flex-wrap: nowrap; /* Prevent wrapping of items */
+  position: fixed; /* Keeps the navbar fixed to the top */
+  top: 2rem; /* Adds space from the top of the viewport */
+  left: 50%; /* Start positioning from the center */
+  transform: translateX(-50%); /* Center the navbar */
+  background-color: #fff; /* Background color */
+  justify-content: center; /* Center the links horizontally */
+  padding: 0.5rem; /* Padding for a smaller navbar */
+  z-index: 1000; /* Ensure it stays above other content */
+  border-radius: 4.5rem; /* More rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional shadow for depth */
+  width: 80%; /* Adjust width as needed */
+  max-width: 38rem; /* Set a maximum width to limit expansion */
+  margin: 0; /* Remove automatic margin to prevent shifting */
+  transition: top 0.5s ease; /* Add transition for smooth appearance */
+}
+
+.navbar a {
+  display: flexbox;
+  color: black; /* Text color */
+  text-decoration: none; /* Remove underline */
+  padding: 0.75rem 1.25rem; /* Increased padding for the embedded effect */
+  margin: 0 0.3125rem; /* Add horizontal margin between buttons */
+  font-size: 1.25rem; /* Font size */
+  font-weight: bold;
+  background-color: #f2f2f2; /* Light background for buttons */
+  border: none; /* Remove border for embedded look */
+  border-radius: 1.5rem; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  transition: opacity 0.5s ease, background-color 0.5s, border-radius 0.5s, box-shadow 0.5s; /* Smooth transition for hover effect */
+}
+
+.navbar a:hover {
+  background-color: #d2cdcd; /* Darker background on hover */
+  box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+  transform: scale(1.1); /* Grow slightly */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Remove outline when focused */
+.navbar a:focus {
+  outline: none; /* Ensure no outline is shown */
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Dark Mode Toggle Styling */
+.dark-mode-toggle {
+  position: fixed;
+  top: 1.25rem; /* Adjust if necessary */
+  right: 1.25rem; /* Adjust if necessary */
+  background-color: #f4f4f4; /* Light background */
+  padding: 0.5rem; /* Padding for better touch target */
+  border-radius: 50%; /* Rounded shape */
+  box-shadow: 0px 0px 0.5rem rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  cursor: pointer; /* Pointer on hover */
+  z-index: 1000; /* Ensure it stays above other content */
+  transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+/* Dark Mode for Navigation Bar & Dark Mode Toggle */
+body.dark-mode .navbar {
+  background-color: #1a1a1a; /* Darker background for the navbar */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Darker shadow in dark mode */
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode .navbar a {
+  background-color: #333; /* Darker navbar background */
+  color: #e0e0e0; /* Light navbar text */
+  box-shadow: none; /* Remove box-shadow */
+}
+
+body.dark-mode .navbar a:hover {
+  background-color: #444; /* Slightly darker on hover */
+  color: #f4f4f4; /* Light hover text color */
+}
+
+/* Hide the default checkbox */
+.dark-mode-toggle input[type="checkbox"] {
+  display: none; 
+}
+
+/* Styling for the icon */
+.dark-mode-toggle label {
+  display: flex; /* Center icon */
+  align-items: center; /* Center vertically */
+}
+
+.material-icons {
+  font-size: 1.5rem; /* Size of the icon */
+  color: #333; /* Default icon color */
+  transition: color 0.5s ease; /* Smooth color transition */
+}
+
+/* Change the toggle background color based on the theme */
+body.dark-mode .dark-mode-toggle {
+  background-color: #333; /* Dark background when in dark mode */
+}
+
+body.dark-mode .material-icons {
+  color: #fff; /* Icon color in dark mode */
+}
+
+body.light-mode .navbar {
+  transition: background-color 0.5s ease, color 0.5s ease; /* Navbar transition */
+}
+
+body.dark-mode .navbar {
+  transition: background-color 0.5s ease, color 0.5s ease; /* Navbar transition */
+}
+.navbar a {
+  transition: background-color 0.5s ease, color 0.5s ease; /* Link transition */
+}
+
+.dark-mode-toggle {
+  transition: background-color 0.5s ease; /* Transition for toggle switch background */
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
+
+body.light-mode {
+  background-color: #f4f4f4; /* Light background color */
+  color: #333; /* Default text color */
+}
+
+body.dark-mode {
+  background-color: #121212; /* Dark background color */
+  color: #f4f4f4; /* Light text color */
+}
+
+/* Typography Colors for Dark Mode */
+body.dark-mode h1, body.dark-mode p {
+  color: #ffffff; /* Softer light text color */
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
+/*Home Styling*/ 
+/*-------------------------------------------------------------------------------------------------------*/
+
+#home {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  height: 100vh; /* Full height of the viewport */
+  width: 100%;
+  padding: 0 15.5rem; /* Add some horizontal padding */
+}
+
+#logo {
+  max-width: 18rem; /* Set this to a suitable value */
+  height: auto; /* Maintain aspect ratio */
+  border: 0.5rem solid #efabab; /* Adjust color and width */
+  border-radius: 1rem; /* Optional: add rounded corners */
+  padding: 0; /* Optional: space between logo and border */
+  flex: 0 0 auto; /* Keep logo at its original size */
+  margin: 0 1rem; /* Space between logo and content */
+}
+
+.home-content {
+  text-align: left; /* Align text to the left */
+  line-height: 1.0; /* Decrease line height for compactness */
+  margin: 0; /* Remove margin for better centering */
+  padding: 0; /* Remove any padding */
+}
+
+.home-content h1 {
+  font-size: 2rem;
+  color: #333; /* Dark text color */
+}
+
+.home-content p {
+  font-size: 1.5rem;
+  line-height: 1.6; /* Improve readability */
+  color: #555; /* Slightly lighter text color */
+  margin: 0.5rem 0; /* Space between paragraphs */
+  padding: 0.3rem;
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
+/* About section */
+/*-------------------------------------------------------------------------------------------------------*/
+
+#about {
+  width: 100%;
+  display: flexbox;
+  align-items: center;
+  padding: 40px; /* Padding for better spacing */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
+/* Skills section */
+/*-------------------------------------------------------------------------------------------------------*/
+
+#skills {
+  display: flexbox;
+  justify-content: center;
+  padding: 5%;
+  width: 100%;
+}
+
+/* Skills Scrollbar */
+.skills-scrollbar {
+  justify-content: center;
+  display: flex;
+  overflow: hidden; /* Hide overflow to prevent scrollbars */
+  white-space: nowrap; /* Prevent line breaks */
+  position: relative; /* Position for the gradient overlay */
+}
+
+/* Add a wrapper for the scrolling items */
+.skills-scroll-wrapper {
+  display: flex; /* Ensure items are in a row */
+  animation: scroll 40s linear infinite; /* Scrolling animation */
+}
+
+.scroll-item {
+  flex: 0 0 auto; /* Prevent flex items from shrinking */
+  width: 15.5rem;
+  margin: 0 0.5rem; /* Spacing between categories */
+  background-color: #fff; /* White background for categories */
+  padding: 0.5rem;
+  border-radius: 0.5rem; /* Rounded corners */
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  scroll-snap-align: start; /* Align items at the start during scrolling */
+}
+
+.progress {
+  background-color: #e0e0e0; /* Light grey background for progress bar */
+  border-radius: 0.6rem;
+  overflow: hidden; /* Prevent overflow */
+}
+
+.progress-bar {
+  height: 0.7rem; /* Set height of progress bar */
+  border-radius: 0.5rem;
+  background-color: #f39c12; /* Custom color for JavaScript */
+  transition: width 0.8s; /* Smooth transition */
+}
+
+/* Scroll animation */
+@keyframes scroll {
+  0% {
+      transform: translateX(100%); /* Start from the right */
+  }
+  100% {
+      transform: translateX(-100%); /* End at the left */
+  }
+}
+
+/* Fade effect on the sides */
+.skills-scrollbar::before,
+.skills-scrollbar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 5rem; /* Adjust width for fade area */
+    pointer-events: none;
+    z-index: 2; /* Make sure it stays on top of the scrolling content */
+}
+
+/* Light mode gradient */
+.skills-scrollbar::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(244, 244, 244, 0.9), rgba(244, 244, 244, 0)); /* Fades from white to transparent */
+}
+
+.skills-scrollbar::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(244, 244, 244, 0.9), rgba(244, 244, 244, 0)); /* Fades from white to transparent */
+}
+
+/* Dark mode gradient */
+.dark-mode .skills-scrollbar::before {
+  background: linear-gradient(to right, rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0)); /* Fades from dark gray to transparent */
+}
+
+.dark-mode .skills-scrollbar::after {
+  background: linear-gradient(to left, rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0)); /* Fades from dark gray to transparent */
+}
+
+
+/* Static Skill Grid */
+.skill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.skill-container h1{
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+#skills h2 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.skill-box {
+  flex: 1;
+  background-color: #fff;
+  padding: 2.5%;
+  border-radius: 2.5rem;
+  box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.1);
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-box h3 {
+  margin-top: 0.5%;
+}
+
+.skill-box ul {
+ margin-top: 0.1%;
+ line-height: 1.5;
+}
+
+.skill-name {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold; /* Bold skill names */
+  padding: 2.5%;
+  color: #333; /* Dark text color */
+}
+
+/* Dark mode styles */
+
+body.dark-mode .skill-name {
+  color: #ffffff; /* Light text color for skill names */
+}
+
+body.dark-mode .scroll-item {
+  background-color: rgb(51, 51, 51); /* White background for categories */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+body.dark-mode .progress {
+  background-color: #424242; /* Dark grey background for progress bar */
+}
+
+body.dark-mode .progress-bar {
+  background-color: #f39c12; /* Change color of progress bars if needed */
+}
+
+body.dark-mode .skill-box {
+  background-color: #333; /* Background color */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
+/* Projects section */
+/*-------------------------------------------------------------------------------------------------------*/
+
+#projects {
+  display: flexbox;
+  align-items: center;
+  padding: 40px; /* Padding for better spacing */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  width: 100%;
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
+/* Contact section */
+/*-------------------------------------------------------------------------------------------------------*/
+
+#contact {
+  display: flexbox;
+  align-items: center;
+  padding: 40px; /* Padding for better spacing */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  width: 100%;
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
+/* Footer */
+/*-------------------------------------------------------------------------------------------------------*/
+
+footer {
+  display: flexbox;
+  background-color: #fff; /* Dark background for the footer */
+  color: #333; /* Text color */
+  text-align: center; /* Center align text */
+  padding: 20px 0; /* Padding for top and bottom */
+  position: relative; /* Allows footer to push down */
+  bottom: 0; /* Ensure it's at the bottom of the page */
+  width: 100%; /* Full width */
+  transition: color 0.3s; /* Transition for hover effect */
+}
+
+.footer-content {
+  max-width: 1200px; /* Max width to align with content */
+  margin: auto; /* Center the content */
+}
+
+.social-links {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove padding */
+}
+
+.social-links li {
+  display: inline; /* Display links inline */
+  margin: 0 15px; /* Spacing between links */
+}
+
+.social-links a {
+  color: #333; /* Link color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s; /* Transition for hover effect */
+}
+
+.social-links a:hover {
+  color: #3498db; /* Change color on hover */
+}
+
+.dark-mode footer {
+  background-color: #333; /* Dark background for the footer */
+  color: #fff; /* Text color */
+}
+
+.dark-mode .social-links a {
+  color: #fff; /* Link color */
+}
+
+.dark-mode .social-links a:hover {
+  color: #3498db; /* Change color on hover */
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
+/* Smaller Screen Adjustments */
+/*-------------------------------------------------------------------------------------------------------*/
+
+.collapsible {
+  margin-bottom: 10px; /* Space between sections */
+}
+
+.collapsible-header {
+  background-color: #f0f0f0; /* Background color */
+  padding: 10px; /* Padding */
+  cursor: pointer; /* Pointer on hover */
+  border: 1px solid #ccc; /* Border */
+}
+
+.collapsible-content {
+  display: none; /* Initially hidden */
+  padding: 10px; /* Padding for content */
+  border: 1px solid #ccc; /* Border for content */
+  background-color: #fafafa; /* Content background */
+}
+
+/* Adjustments for different screens */
+
+@media (max-width: 1150px) {
+  #home {
+    padding: 0;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+.home-content{
+  align-items: center;
+  text-align: center;
+  padding: 1.5%;
+  font-size: 0.5rem;
+}
+  .collapsible-content {
+    display: block; /* Show content on larger screens */
+  }
+  #logo {
+      width: 12rem; /* Smaller logo for large tablets or small laptops */
+  }
+}
+
+@media (max-width: 768px) {
+  #home {
+    padding: 0;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+.home-content{
+  align-items: center;
+  text-align: center;
+  padding: 1.5%;
+  font-size: 0.3rem;
+}
+  #skill {
+    width: 100%;
+  }
+  .skill-box{
+    display: flex;
+    font-size: 0.8rem;
+    border-radius: 1.5rem;
+  }
+  .navbar {
+      display: none; /* Hide the navbar */
+  }
+  #logo {
+      width: 8rem; /* Even smaller logo for tablets */
+      padding: 1.5%;
+  }
+}
+
+@media (max-width: 480px) {
+  #logo {
+      width: 6rem; /* Smallest logo for mobile devices */
+  }
 }
