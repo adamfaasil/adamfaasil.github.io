@@ -1,6 +1,5 @@
 ```markdown
 # adamfaasil.github.io
-# Portfolio Website
 
 ## Description
 
