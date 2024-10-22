@@ -3,7 +3,7 @@
 
 ## Description
 
-Welcome to my portfolio website! This site showcases my projects, skills, and experiences as a [Your Profession/Field, e.g., Web Developer, Graphic Designer, etc.]. It serves as a platform to highlight my work and connect with potential clients and collaborators.
+Welcome to my portfolio website! This site showcases my projects, skills, and experiences as a developer. It serves as a platform to highlight my work and connect with potential clients and collaborators in the future.
 
 ## Features
 
@@ -16,9 +16,9 @@ Welcome to my portfolio website! This site showcases my projects, skills, and ex
 ## Technologies Used
 
 - **Frontend:** HTML, CSS, JavaScript
-- **Frameworks/Libraries:** [React, Vue, Bootstrap, etc. – specify as needed]
-- **Backend (if applicable):** [Node.js, PHP, etc.]
-- **Deployment:** [GitHub Pages, Netlify, Vercel, etc.]
+- **Frameworks/Libraries:** Bootstrap, Google Fonts
+- **Backend (if applicable):** [for future use.]
+- **Deployment:** GitHub Pages.
 
 ## Installation
 
@@ -26,11 +26,11 @@ To view or modify the portfolio locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/portfolio-website.git
+   git clone https://github.com/adamfaasil/adamfaasil.github.io.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd portfolio-website
+   cd adamfaasil.github.io
    ```
 3. Open `index.html` in your preferred web browser to view the site.
 
