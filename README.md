@@ -7,18 +7,18 @@ Welcome to my portfolio website! This site showcases my projects, skills, and ex
 
 ## Features
 
-- **Responsive Design:** Optimized for various devices, ensuring a seamless user experience on desktops, tablets, and smartphones.
-- **Project Showcases:** Detailed presentations of my key projects, including descriptions, technologies used, and links to live demos or repositories.
-- **About Me Section:** A brief introduction highlighting my background, skills, and professional journey.
-- **Contact Form:** Easy way for visitors to get in touch with me for inquiries or collaboration opportunities.
-- **Blog (Optional):** A section for sharing insights, tutorials, or articles related to my field.
+- Responsive Design: Optimized for various devices, ensuring a seamless user experience on desktops, tablets, and smartphones.
+- Project Showcases: Detailed presentations of my key projects, including descriptions, technologies used, and links to live demos or repositories.
+- About Me Section: A brief introduction highlighting my background, skills, and professional journey.
+- Contact Form: Easy way for visitors to get in touch with me for inquiries or collaboration opportunities.
+- Blog (Optional): A section for sharing insights, tutorials, or articles related to my field.
 
 ## Technologies Used
 
-- **Frontend:** HTML, CSS, JavaScript
-- **Frameworks/Libraries:** Bootstrap, Google Fonts
-- **Backend (if applicable):** [for future use.]
-- **Deployment:** GitHub Pages.
+- Frontend: HTML, CSS, JavaScript
+- Frameworks/Libraries: Bootstrap, Google Fonts
+- Backend (use this for if applicable): [for future use.]
+- Deployment: GitHub Pages.
 
 ## Installation
 
