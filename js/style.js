@@ -65,23 +65,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Hide/Show Navbar on Scroll
 
-let lastScrollTop = 0;
-const navbar = document.querySelector('.navbar');
+document.addEventListener('DOMContentLoaded', function() {
+    let lastScrollTop = 0; // Variable to store the last scroll position
+const navbar = document.querySelector('.navbar'); // Select the navbar
 
 window.addEventListener('scroll', function() {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop; // Get the current scroll position
 
     if (scrollTop > lastScrollTop) {
         // Scrolling down
-        navbar.style.top = '1.5%'; // Set to your desired distance from the top
+        navbar.style.top = '-80px'; // Adjust this value to hide the navbar completely (you might need to change -80px based on your navbar's height)
     } else {
         // Scrolling up
-        navbar.style.top = '1.5%'; // Keep it at the same distance
+        navbar.style.top = '0.8rem'; // Bring back the navbar to its original position (adjust this based on your desired position)
     }
-    lastScrollTop = scrollTop;
+    
+    lastScrollTop = scrollTop; // Update the last scroll position
 });
-
-
+});
 
 
 

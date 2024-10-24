@@ -5,7 +5,6 @@
 html{
   font-family: "Montserrat", sans-serif; /* Font Style */
   font-optical-sizing: auto;
-  font-size: 16px; /* Base font size */
    
 }
 
@@ -48,12 +47,12 @@ body {
 }
 
 .loading-animation {
-  width: 1.5rem;
-  height: 1.5rem;
-  border: 0.5rem solid #ccc; /* Light border */
-  border-top: 0.5rem solid #3466db; /* Color of the loading animation */
-  border-radius: 50%;
-  animation: spin 2s linear infinite; /* Spin animation */
+  width: 30px; /* Increased width for better visibility */
+  height: 30px; /* Increased height for better visibility */
+  border: 4px solid #ccc; /* Light border */
+  border-top: 4px solid #3466db; /* Color for the spinner */
+  border-radius: 50%; /* Make it a circle */
+  animation: spin 1s linear infinite; /* Spin animation */
 }
 
 @keyframes spin {
@@ -74,7 +73,7 @@ body {
 /*-------------------------------------------------------------------------------------------------------*/
 
 .hero{
-  display: flexbox;
+  display: flex;
   width: 100%;
 }
 
@@ -87,42 +86,44 @@ body {
 /*-------------------------------------------------------------------------------------------------------*/
 
 .navbar {
-  display: flex; /* Use flex layout */
-  flex-wrap: nowrap; /* Prevent wrapping of items */
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive columns */
   position: fixed; /* Keeps the navbar fixed to the top */
-  top: 2rem; /* Adds space from the top of the viewport */
+  top: 0.8em; /* Adds space from the top of the viewport */
   left: 50%; /* Start positioning from the center */
   transform: translateX(-50%); /* Center the navbar */
   background-color: #fff; /* Background color */
-  justify-content: center; /* Center the links horizontally */
-  padding: 0.5rem; /* Padding for a smaller navbar */
+  padding: 0.5em; /* Padding for a smaller navbar */
+  gap: 0.5em;
   z-index: 1000; /* Ensure it stays above other content */
-  border-radius: 4.5rem; /* More rounded corners */
+  border-radius: 50px; /* More rounded corners */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional shadow for depth */
-  width: 80%; /* Adjust width as needed */
+  width: 90%; /* Adjust width to make it responsive */
   max-width: 38rem; /* Set a maximum width to limit expansion */
   margin: 0; /* Remove automatic margin to prevent shifting */
-  transition: top 0.5s ease; /* Add transition for smooth appearance */
+  transition: top 0.5s ease, background-color 0.5s; /* Add transition for smooth appearance */
 }
 
 .navbar a {
-  display: flexbox;
+  display: flex; /* Flex for link content */
+  align-items: center;
+  justify-content: center;
   color: black; /* Text color */
   text-decoration: none; /* Remove underline */
-  padding: 0.75rem 1.25rem; /* Increased padding for the embedded effect */
-  margin: 0 0.3125rem; /* Add horizontal margin between buttons */
+  padding: 0.75em 1.25em; /* Increased padding for the embedded effect */
+  margin: 0; /* Remove margin for consistent spacing */
   font-size: 1.25rem; /* Font size */
   font-weight: bold;
   background-color: #f2f2f2; /* Light background for buttons */
   border: none; /* Remove border for embedded look */
-  border-radius: 1.5rem; /* Rounded corners */
+  border-radius: 50px; /* Rounded corners */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for depth */
   transition: opacity 0.5s ease, background-color 0.5s, border-radius 0.5s, box-shadow 0.5s; /* Smooth transition for hover effect */
 }
 
 .navbar a:hover {
   background-color: #d2cdcd; /* Darker background on hover */
-  box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
   transform: scale(1.1); /* Grow slightly */
   transition: transform 0.3s ease; /* Smooth transition */
 }
@@ -140,12 +141,12 @@ body {
 /* Dark Mode Toggle Styling */
 .dark-mode-toggle {
   position: fixed;
-  top: 1.25rem; /* Adjust if necessary */
-  right: 1.25rem; /* Adjust if necessary */
+  top: 1.25em; /* Adjust if necessary */
+  right: 1.25em; /* Adjust if necessary */
   background-color: #f4f4f4; /* Light background */
-  padding: 0.5rem; /* Padding for better touch target */
+  padding: 0.5em; /* Padding for better touch target */
   border-radius: 50%; /* Rounded shape */
-  box-shadow: 0px 0px 0.5rem rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
   cursor: pointer; /* Pointer on hover */
   z-index: 1000; /* Ensure it stays above other content */
   transition: background-color 0.3s ease; /* Smooth background transition */
@@ -155,7 +156,6 @@ body {
 body.dark-mode .navbar {
   background-color: #1a1a1a; /* Darker background for the navbar */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Darker shadow in dark mode */
-  transition: background-color 0.3s ease;
 }
 
 body.dark-mode .navbar a {
@@ -193,17 +193,6 @@ body.dark-mode .dark-mode-toggle {
 
 body.dark-mode .material-icons {
   color: #fff; /* Icon color in dark mode */
-}
-
-body.light-mode .navbar {
-  transition: background-color 0.5s ease, color 0.5s ease; /* Navbar transition */
-}
-
-body.dark-mode .navbar {
-  transition: background-color 0.5s ease, color 0.5s ease; /* Navbar transition */
-}
-.navbar a {
-  transition: background-color 0.5s ease, color 0.5s ease; /* Link transition */
 }
 
 .dark-mode-toggle {
@@ -552,6 +541,15 @@ footer {
 }
 
 @media (max-width: 768px) {
+  #splash-screen{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1000;
+  }
+  #splash-screen h1{
+    font-size: 2rem;
+  }
   #home {
     flex-wrap: wrap;
     align-items: center;
