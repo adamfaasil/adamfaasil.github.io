@@ -472,7 +472,7 @@ footer {
   background-color: #fff; /* Dark background for the footer */
   color: #333; /* Text color */
   text-align: center; /* Center align text */
-  padding: 20px 0; /* Padding for top and bottom */
+  padding: 3.5em 0; /* Padding for top and bottom */
   position: relative; /* Allows footer to push down */
   bottom: 0; /* Ensure it's at the bottom of the page */
   width: 100%; /* Full width */
@@ -532,11 +532,11 @@ footer {
 .home-content{
   align-items: center;
   text-align: center;
-  padding: 1.5%;
+  padding: 1em;
   font-size: 0.5rem;
 }
   #logo {
-      width: 15rem; /* Smaller logo for large tablets or small laptops */
+      width: 15em; /* Smaller logo for large tablets or small laptops */
   }
 }
 
@@ -557,8 +557,11 @@ footer {
 .home-content{
   align-items: center;
   text-align: center;
-  padding: 1.5%;
-  font-size: 0.3rem;
+  padding: 1em;
+}
+.home-content h1 ,
+.home-content p {
+  font-size: 1.5rem;
 }
   #skill {
     width: 100%;
@@ -572,9 +575,9 @@ footer {
       display: none; /* Hide the navbar */
   }
   #logo {
-    width: 16rem; /* Smallest logo for mobile devices */
-    padding: 1.5%;
-  }
+    width: 12em; /* Smallest logo for mobile devices */
+    padding: 0.25em;
+}
 }
 
 @media (max-width: 480px) {
@@ -586,12 +589,10 @@ footer {
 .home-content {
   align-items: center;
   text-align: center;
-  padding: 1.5%;
+  padding: 0.5em;
   margin-top: 0;
 }
-.home-content h1 {
-  font-size: 1.3rem;
-}
+.home-content h1,
 .home-content p {
   font-size: 1.3rem;
 }
@@ -618,7 +619,7 @@ footer {
 
   #logo {
       width: 12rem; /* Smallest logo for mobile devices */
-      padding: 1.5%;
+      padding: 0.25em;
   }
   #skills h2{
     font-size: 1rem;
