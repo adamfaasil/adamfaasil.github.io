@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
             splashScreen.style.display = "none"; // Remove it from the view after fade out
             hero.classList.remove('hidden'); // Show Header again
         }, 500); // Match with the CSS transition duration
-    }, 4000); // Change this time as needed
+    }, 2000); // Change this time as needed
 });
 
 // Smooth Scrolling
